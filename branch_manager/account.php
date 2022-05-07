@@ -572,37 +572,27 @@ require_once "../auth.php";
                             <div class="modal-body">
 
                                 
-                                         <form action="">
+                                         <form action="create_account.php" method="POST">
                             <div class="card-header">
                                 <strong class="card-title">Personal Information</strong>
                             </div><br/>
                             <div class="row">
                                         <div class="col-sm-3">
-                                              <label for="lname" class="control-label mb-1">Lastname*</label>
-                                              <input id="lname" name="lname" type="text" class="form-control" placeholder="Lastname here!">
+                                              <label for="lastname" class="control-label mb-1">Lastname</label>
+                                              <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Lastname here!">
                                         </div>
                                          <div class="col-sm-3">
-                                              <label for="fname" class="control-label mb-1">Firstname</label>
-                                              <input id="fname" name="fname" type="text" class="form-control" placeholder="Firstname here!">
+                                              <label for="fname" class="control-label mb-1">name</label>
+                                              <input id="name" name="name" type="text" class="form-control" placeholder="Firstname here!">
                                         </div>
                                          <div class="col-sm-3">
-                                              <label for="mname" class="control-label mb-1">Middle Name</label>
-                                              <input id="mname" name="mname" type="text" class="form-control" placeholder="Middlename here!">
+                                              <label for="middle_name" class="control-label mb-1">Middle Name</label>
+                                              <input id="mid_name" name="mid_name" type="text" class="form-control" placeholder="Middlename here!">
                                         </div>
-                                        <!--  <div class="col-sm-3">
-                                              <label for="mname" class="control-label mb-1">Catteg</label>
-                                              <input id="mname" name="mname" type="text" class="form-control" placeholder="Middlename here!">
-                                        </div> -->
-
-                                             <div class="col-sm-3">
-                                                <label for="select" class="control-label mb-1">Categories</label>
-                                                    <select name="select" id="select" class="form-control">
-                                                        <option value="0">Please select</option>
-                                                        <option value="atm">ATM</option>
-                                                        <option value="sps">SPS</option>
-                                                        <option value="spsv1">SPSV1</option>
-                                                    </select>
-                                            </div>
+                                        <div class="col-sm-3">
+                                              <label for="password" class="control-label mb-1">Password</label>
+                                              <input id="password" name="password" type="password" class="form-control" placeholder="Password here!">
+                                        </div>
 
                                                                     
                             </div>
@@ -614,75 +604,39 @@ require_once "../auth.php";
                                         </div>
                                          <div class="col-sm-6">
                                               <label for="e_address" class="control-label mb-1">Email Address</label>
-                                              <input id="e_address" name="e_address" type="text" class="form-control" placeholder="Email Address here!">
+                                              <input id="email_address" name="email_address" type="text" class="form-control" placeholder="Email Address here!">
                                         </div>
                             </div>
 
                             <div class="row">
                                         <div class="col-sm-4">
-                                              <label for="bday" class="control-label mb-1">Date of Birth</label>
-                                              <input id="bday" name="bday" type="text" class="form-control" placeholder="Birthday here!">
+                                              <label for="Birthday" class="control-label mb-1">Birthday</label>
+                                              <input id="birthday" name="birthday" type="date" class="form-control" placeholder="Birthday here!">
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="t_number" class="control-label mb-1">Telephone/Mobile Number</label>
                                               <input id="t_number" name="t_number" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
                                         </div>
-                                         <div class="col-sm-4">
-                                              <label for="id_card" class="control-label mb-1">ID Card Number</label>
-                                              <input id="id_card" name="id_card" type="text" class="form-control" placeholder="ID Card Number here!">
-                                        </div>
                             </div>
 
                             <div class="row">
                                         <div class="col-sm-6">
-                                              <label for="mother" class="control-label mb-1">Mother's Name</label>
-                                              <input id="mother" name="mother" type="text" class="form-control" placeholder="Mother's Name here!">
-                                               <label for="father" class="control-label mb-1">Father's Name</label>
-                                              <input id="father" name="father" type="text" class="form-control" placeholder="Father's Name here!">
-                                               <label for="spouse" class="control-label mb-1">Name of Spouse</label>
-                                              <input id="spouse" name="spouse" type="text" class="form-control" placeholder="Name of Spouse here!">
+                                              <label for="educational" class="control-label mb-1">High Educational Attainment</label>
+                                              <input id="educational" name="educational" type="text" class="form-control" placeholder="High Educational Attainment here!">
+                                               <label for="age" class="control-label mb-1">Age</label>
+                                              <input id="age" name="age" type="text" class="form-control" placeholder="Age here!">
+                                               <label for="gender" class="control-label mb-1">Gender</label>
+                                              <input id="gender" name="gender" type="text" class="form-control" placeholder="Gender here!">
                                         </div>
                                         <div class="col-sm-6">
-                                              <label for="c_person" class="control-label mb-1">Contact Person</label>
-                                              <input id="c_person" name="c_person" type="text" class="form-control" placeholder="Contact Person here!">
-                                               <label for="contact" class="control-label mb-1">Contact Number</label>
-                                              <input id="contact" name="contact" type="text" class="form-control" placeholder="Contact Number here!">
-                                               <label for="s_number" class="control-label mb-1">Spouse Contact Number</label>
-                                              <input id="s_number" name="s_number" type="text" class="form-control" placeholder="Spouse Contact Number here!">
+                                              <label for="civil_status" class="control-label mb-1">Civil Status</label>
+                                              <input id="civil_status" name="civil_status" type="text" class="form-control" placeholder="civil status here!">
+                                               <label for="position" class="control-label mb-1">Position</label>
+                                              <input id="position" name="position" type="text" class="form-control" placeholder="Company Position here!">
                                         </div>  
                             </div><br/>
-
-                            <div class="card-header">
-                                <strong class="card-title">Company Information</strong>
-                            </div><br/>
-                            <div class="row">
-                                        <div class="col-sm-4">
-                                              <label for="c_affiliated" class="control-label mb-1">Company Affiliated With</label>
-                                              <input id="c_affiliated" name="c_affiliated" type="text" class="form-control" placeholder="Lastname here!">
-                                        </div>
-                                         <div class="col-sm-4">
-                                              <label for="c_address" class="control-label mb-1">Company Address</label>
-                                              <input id="c_address" name="c_address" type="text" class="form-control" placeholder="Firstname here!">
-                                        </div>
-                                         <div class="col-sm-4">
-                                              <label for="c_number" class="control-label mb-1">Company Contact Number</label>
-                                              <input id="c_number" name="c_number" type="text" class="form-control" placeholder="Middlename here!">
-                                        </div>
-                            </div>
-
-                             <div class="row">
-                                        <div class="col-sm-6">
-                                              <label for="position" class="control-label mb-1">Position/Occupation</label>
-                                              <input id="position" name="position" type="text" class="form-control" placeholder="Permanent Address here!">
-                                        </div>
-                                         <div class="col-sm-6">
-                                              <label for="w_status" class="control-label mb-1">Work Status</label>
-                                              <input id="w_status" name="w_status" type="text" class="form-control" placeholder="Email Address here!">
-                                        </div>
-                            </div><br/>
-
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm" style="">
+                                <button type="submit" name="save" class="btn btn-primary btn-sm" style="">
                                          <i class="fa fa-save"></i> Save
                                 </button>
                                 <button type="reset" class="btn btn-danger btn-sm">
