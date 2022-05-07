@@ -207,7 +207,7 @@ input::placeholder {
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#myprofile"><i class="fa fa-user"></i> My Profile</a>
 
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
 
@@ -534,6 +534,37 @@ input::placeholder {
                     </div>
                 </div>
 <!-- end modal delete -->
+
+<!-- Profile Modal -->
+<div class="modal fade" id="myprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">My Profile</h5>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+                <?php
+
+                include_once "../auth.php";
+
+                $datas = mysqli_query($con, "SELECT * FROM user where user_id = '{$_SESSION['uid']}'");
+
+                $sql = mysqli_fetch_array($datas);
+                ?>
+                <label class="form-label">Name</label>
+                <input type="text" name="fname" class="form-control" value="<?php echo $sql['name'] ?>"  Readonly>
+                <label class="form-label">Position</label>
+                <input type="text" name="position" class="form-control" value="<?php echo $sql['position'] ?>" Readonly><br>
+              </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
