@@ -281,7 +281,7 @@ require_once "../auth.php";
                                                     <button type="button" class="btn btn-primary btn-sm viewbtn" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
                                                     <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
                                                     <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
-                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm deletebtn" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                        
@@ -472,16 +472,20 @@ require_once "../auth.php";
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
 
-                                
+                            <form action="delete_account.php" method="POST">
+                                <div class="modal-body">
+
+                                <input type="hidden" name="delete_id" id="delete_id">
                                         <p align="center">Are you sure? You want to Delete this Account?</p>
 
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">YES</button>
+                                            <button type="submit" name="deletedata" class="btn btn-secondary">YES</button>
                                              <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
                                         </div>
                             </div>
+                            </form>
+                            
                                                          
                         </div>
                     </div>
@@ -647,6 +651,23 @@ require_once "../auth.php";
 
 
       })
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.deletebtn').on('click', function() {
+
+            $('#delete').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function() {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#delete_id').val(data[0]);
+
+        })
     });
 </script>
 </body>
