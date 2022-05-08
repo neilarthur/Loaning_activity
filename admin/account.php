@@ -279,8 +279,8 @@ require_once "../auth.php";
                                                 <td style="display: none;"><center><?php echo $rows['email_address'];  ?></center></td>
                                                 <td>
                                                     <button type="button" class="btn btn-primary btn-sm viewbtn" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
-                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
-                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm approvebtn" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm rejectbtn" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
                                                     <button type="submit" class="btn btn-primary btn-sm deletebtn" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
@@ -425,15 +425,18 @@ require_once "../auth.php";
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form method="post" action="approve.php">
                             <div class="modal-body">
-
+                                <p align="center">Are you sure? You want to approved this Account?</p>
                                 
-                                        <p align="center">Are you sure? You want to approved this Account?</p>
+                                    <div class="modal-footer">
+                                        <input type="hidden" id="approve_id" name="approve_id">
+                                        <button type="submit" name="approved" class="btn btn-secondary">YES</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                                    </div>
 
-                                        <div class="modal-footer">
-                                            <button type="button" name="approved" class="btn btn-secondary" data-dismiss="modal">YES</button>
-                                             <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
-                                        </div>
+                            </form>
+                            
                             </div>
                                                          
                         </div>
@@ -451,17 +454,17 @@ require_once "../auth.php";
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form method="post" action="reject.php">
                             <div class="modal-body">
+                                <p align="center">Are you sure? You want to Reject this Account?</p>
 
-                                
-                                        <p align="center">Are you sure? You want to Reject this Account?</p>
-
-                                        <div class="modal-footer">
-                                            <button type="button" name="reject" class="btn btn-secondary" data-dismiss="modal">YES</button>
-                                             <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
-                                        </div>
-                            </div>
-                                                         
+                                <div class="modal-footer">
+                                <input type="hidden" id="reject_id" name="reject_id">
+                                    <button type="submit" name="reject" class="btn btn-secondary">YES</button>
+                                     <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                                </div>
+                    </div>      
+                        </form>                              
                         </div>
                     </div>
                 </div>
@@ -673,6 +676,41 @@ require_once "../auth.php";
             }).get();
             console.log(data);
             $('#delete_id').val(data[0]);
+
+        })
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.approvebtn').on('click', function() {
+
+            $('#approve').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function() {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#approve_id').val(data[0]);
+
+        })
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.rejectbtn').on('click', function() {
+
+            $('#reject').modal('show');
+
+            $tr = $(this).closest('tr');
+
+            var data = $tr.children("td").map(function() {
+                return $(this).text();
+            }).get();
+            console.log(data);
+            $('#reject_id').val(data[0]);
 
         })
     });

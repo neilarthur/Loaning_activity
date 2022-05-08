@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2022 at 07:48 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.3.28
+-- Generation Time: May 08, 2022 at 09:49 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`user_id`, `email_address`, `password`, `date_created`) VALUES
 (1, 'ralphvincent@yahoo.com', '123', '2022-05-07 17:02:09'),
 (2, 'charlesvincent@yahoo.com', '123', '2022-05-07 17:03:13'),
-(3, 'richard.ramos@yahoo.com', '123', '2022-05-07 17:12:07');
+(3, 'richard.ramos@yahoo.com', '123', '2022-05-07 17:12:07'),
+(4, 'lexilore@gmail.com', '123456', '2022-05-08 05:52:26');
 
 -- --------------------------------------------------------
 
@@ -113,6 +114,7 @@ CREATE TABLE `user` (
   `age` int(11) NOT NULL,
   `gender` varchar(255) NOT NULL,
   `civil_status` varchar(255) NOT NULL,
+  `user_status` varchar(100) NOT NULL,
   `position` enum('admin','branch manager','staff') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -120,10 +122,11 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `name`, `Lastname`, `mid_name`, `p_address`, `birthday`, `t_number`, `educational`, `age`, `gender`, `civil_status`, `position`) VALUES
-(1, 'ralphvincent', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(2, 'charlesvincent', 'pagcaliwagan', 'solis', 'calauan laguna', '2001-11-08', 986543, 'information technology', 21, 'Male', 'single', 'admin'),
-(3, 'richard ', 'Ramos', 'wick', 'calauan laguna', '1111-02-01', 986543, 'information technology', 21, 'Male', 'single', 'branch manager');
+INSERT INTO `user` (`user_id`, `name`, `Lastname`, `mid_name`, `p_address`, `birthday`, `t_number`, `educational`, `age`, `gender`, `civil_status`, `user_status`, `position`) VALUES
+(1, 'ralphvincent', '', '', '', NULL, 0, '', 0, '', '', 'Approved', 'admin'),
+(2, 'charlesvincent', 'pagcaliwagan', 'solis', 'calauan laguna', '2001-11-08', 986543, 'information technology', 21, 'Male', 'single', 'Rejected', 'admin'),
+(3, 'richard ', 'Ramos', 'wick', 'calauan laguna', '1111-02-01', 986543, 'information technology', 21, 'Male', 'single', 'Approved', 'branch manager'),
+(4, 'lexi', 'loree', 'P', 'santa cruz laguna', '1998-05-31', 2147483647, 'college degree', 24, 'female', 'single', 'Approved', 'branch manager');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +165,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `customer`
