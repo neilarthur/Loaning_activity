@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2022 at 05:42 PM
+-- Generation Time: May 08, 2022 at 07:48 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -39,17 +39,9 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`user_id`, `email_address`, `password`, `date_created`) VALUES
-(1, 'richard.ramos@yahoo.com', '123', '2022-05-03 08:19:56'),
-(16, 'ralphvincent@yahoo.com', '123', '2022-05-03 09:39:56'),
-(17, 'chadwick@yahoo.com', '12345', '2022-05-03 09:43:39'),
-(18, 'richard.ramos@yahoo.com', '123', '2022-05-03 09:45:05'),
-(19, 'chadwick@yahoo.com', '123aaa', '2022-05-07 07:37:33'),
-(20, 'neil.pornela@yahoo.com', '123', '2022-05-04 05:26:02'),
-(21, 'chadwick@yahoo.com', '123', '2022-05-07 06:24:03'),
-(22, 'johnllyod@yahoo.com', '1213', '2022-05-07 06:27:40'),
-(23, '', '123', '2022-05-07 15:23:49'),
-(24, 'johnwick@yahoo.com', '123', '2022-05-07 15:26:35'),
-(25, 'nimezmaricito@yahoo.com', '123', '2022-05-07 15:37:08');
+(1, 'ralphvincent@yahoo.com', '123', '2022-05-07 17:02:09'),
+(2, 'charlesvincent@yahoo.com', '123', '2022-05-07 17:03:13'),
+(3, 'richard.ramos@yahoo.com', '123', '2022-05-07 17:12:07');
 
 -- --------------------------------------------------------
 
@@ -129,16 +121,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `Lastname`, `mid_name`, `p_address`, `birthday`, `t_number`, `educational`, `age`, `gender`, `civil_status`, `position`) VALUES
-(16, 'ralphvincent', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(17, 'chadwick balota', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(18, 'richard ramos', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(19, 'no name', '', '', '', NULL, 0, '', 0, '', '', 'branch manager'),
-(20, 'neil pornela', '', '', '', NULL, 0, '', 0, '', '', 'staff'),
-(21, 'charlesvincent', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(22, 'john llyold', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
-(23, 'justin', 'violanta', 'dale', 'calauan laguna', '2001-02-01', 94726352, 'information technology', 21, 'male', 'single', 'staff'),
-(24, 'john', 'balota', 'wick', 'calauan laguna', '2001-02-02', 49582211, 'information technology', 21, 'Male', 'single', 'branch manager'),
-(25, 'nimez', 'Maricito', 'haha', 'calauan laguna', '2001-02-01', 986543, 'information technology', 21, 'Male', 'single', 'admin');
+(1, 'ralphvincent', '', '', '', NULL, 0, '', 0, '', '', 'admin'),
+(2, 'charlesvincent', 'pagcaliwagan', 'solis', 'calauan laguna', '2001-11-08', 986543, 'information technology', 21, 'Male', 'single', 'admin'),
+(3, 'richard ', 'Ramos', 'wick', 'calauan laguna', '1111-02-01', 986543, 'information technology', 21, 'Male', 'single', 'branch manager');
 
 --
 -- Indexes for dumped tables
@@ -177,7 +162,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `customer`
