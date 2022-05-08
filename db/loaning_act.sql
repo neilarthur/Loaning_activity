@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2022 at 09:49 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Generation Time: May 08, 2022 at 06:08 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,10 +39,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`user_id`, `email_address`, `password`, `date_created`) VALUES
-(1, 'ralphvincent@yahoo.com', '123', '2022-05-07 17:02:09'),
 (2, 'charlesvincent@yahoo.com', '123', '2022-05-07 17:03:13'),
-(3, 'richard.ramos@yahoo.com', '123', '2022-05-07 17:12:07'),
-(4, 'lexilore@gmail.com', '123456', '2022-05-08 05:52:26');
+(3, 'richard.ramos@yahoo.com', '123', '2022-05-07 17:12:07');
 
 -- --------------------------------------------------------
 
@@ -79,8 +77,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `lname`, `fname`, `mname`, `category`, `permanent_address`, `email`, `date_birth`, `mobile_no`, `id_number`, `mother_name`, `mother_no`, `father_name`, `father_no`, `spouse_name`, `spouse_no`, `company_affiliated`, `company_address`, `company_no`, `company_position`, `company_status`) VALUES
-(6, 'Ramos', 'richard', 'sadsads', 'sps', 'hanggan 1 Calauan Laguna', 'richard.ramos@yahoo.com', '1222-02-08', 98765, 123, 'sadadadasdada', 123124, 'qweqeqewq', 123123, 'asdasdasdasdsa', 12345, 'dsadadasd', 'asdasdsadasd', 12345, 'manager', 'manager'),
-(11, 'pagcaliwagan', 'charles vincent', 'solis', 'atm', 'hanggan 1 Calauan Laguna', 'charlespagcaliwagan@yahoo.com', '2001-11-08', 9475632, 881, 'edna pagcaliwagan', 947563219, 'ariel pagcaliwagan', 2147483647, 'ralph vincent pagcaliwagan', 94534212, 'samsan tech', 'calauan laguna', 987654321, 'manager wasss', 'magssss');
+(1, 'pagcaliwagan', 'ralph vincent', 'solis', 'atm', 'hanggan 1 Calauan Laguna', 'ralphvincent.pagcaliwagan@yahoo.com', '2001-11-08', 9475632, 123, 'edna pagcaliwagan', 947563219, 'ariel pagcaliwagan', 123123, 'ralph vincent pagcaliwagan', 12345, 'dsadadasd', 'asdasdsadasd', 12345, 'manager', 'magssss'),
+(2, 'Ramos', 'Jireh', 'lim', 'atm', 'hanggan 1 Calauan Laguna', 'jireh.ramos@yahoo.com', '2001-11-08', 98765, 123, 'jireh', 123, 'jireh', 1234, 'sdadasda', 12345, 'dsadadasd', 'asdasdsadasd', 12345, 'manager', 'manager');
 
 -- --------------------------------------------------------
 
@@ -93,8 +91,17 @@ CREATE TABLE `loan_info` (
   `customer_id` int(11) NOT NULL,
   `loan_account` varchar(255) NOT NULL,
   `loan_payment` int(255) NOT NULL,
+  `loan_amount` int(255) NOT NULL,
   `loan_balance` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `loan_info`
+--
+
+INSERT INTO `loan_info` (`loan_id`, `customer_id`, `loan_account`, `loan_payment`, `loan_amount`, `loan_balance`) VALUES
+(1, 1, 'adsadsadsadasd', 12345, 2500, 12345),
+(2, 2, 'adsadsadsadasd', 12345, 2500, 12345);
 
 -- --------------------------------------------------------
 
@@ -123,10 +130,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `Lastname`, `mid_name`, `p_address`, `birthday`, `t_number`, `educational`, `age`, `gender`, `civil_status`, `user_status`, `position`) VALUES
-(1, 'ralphvincent', '', '', '', NULL, 0, '', 0, '', '', 'Approved', 'admin'),
-(2, 'charlesvincent', 'pagcaliwagan', 'solis', 'calauan laguna', '2001-11-08', 986543, 'information technology', 21, 'Male', 'single', 'Rejected', 'admin'),
-(3, 'richard ', 'Ramos', 'wick', 'calauan laguna', '1111-02-01', 986543, 'information technology', 21, 'Male', 'single', 'Approved', 'branch manager'),
-(4, 'lexi', 'loree', 'P', 'santa cruz laguna', '1998-05-31', 2147483647, 'college degree', 24, 'female', 'single', 'Approved', 'branch manager');
+(2, 'charlesvincent', 'pagcaliwagan', 'solis', 'calauan laguna', '2001-11-08', 986543, 'information technology', 21, 'Male', 'single', 'Approved', 'admin'),
+(3, 'richard ', 'Ramos', 'wick', 'calauan laguna', '1111-02-01', 986543, 'information technology', 21, 'Male', 'single', 'Approved', 'branch manager');
 
 --
 -- Indexes for dumped tables
@@ -171,13 +176,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `loan_info`
 --
 ALTER TABLE `loan_info`
-  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
