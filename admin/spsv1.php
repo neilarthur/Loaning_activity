@@ -288,7 +288,8 @@ input::placeholder {
                                         include_once("../auth.php");
 
                                         $query = mysqli_query($con, "SELECT * FROM customer WHERE category = 'spsv1' ");
-                                        while ($row=mysqli_fetch_assoc($query)) { ?>   
+                                        $sql = mysqli_query($con,"SELECT * FROM loan_info ");
+                                        while ($row=mysqli_fetch_assoc($query) AND $rows=mysqli_fetch_assoc($sql)) { ?>
                                         <tr>
                                             <td style="display: none;"><center><?php echo $row['customer_id'];  ?></center></td>
                                             <td style="display: none;"><center><?php echo $row['category'];  ?></center></td>
@@ -309,16 +310,16 @@ input::placeholder {
                                             <td style=" display: none;"><?php echo $row['company_position'];  ?></td>
                                             <td style=" display: none;"><?php echo $row['company_status'];  ?></td>
                                             <td style=" display: none;"><?php echo $row['date_birth'];  ?></td>
-                                            <td><center>Account</center></td>
-                                            <td><center>Amount</center></td>
-                                            <td><center>Payment</center></td>
-                                            <td><center>Balance</center></td>
+                                            <td><center><?php echo $rows['loan_account'];  ?></center></td>
+                                            <td><center><?php echo $rows['loan_amount'];  ?></center></td>
+                                            <td><center><?php echo $rows['loan_payment'];  ?></center></td>
+                                            <td><center><?php echo $rows['loan_balance'];  ?></center></td>
                                             <td>
                                                  <button type="submit" class="btn btn-primary btn-sm viewbtn" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
                                                  <button type="submit" class="btn btn-primary btn-sm updatebtn" data-toggle="modal" data-target="#update"><i class="fa fa-refresh"></i>
                                                  </button>
 
-                                                 <button type="submit" class="btn btn-primary btn-sm deletebtn" data-toggle="modal" data-target="#delete"><i class="fa fa-refresh"></i>
+                                                 <button type="submit" class="btn btn-primary btn-sm deletebtn" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i>
                                                      </button>
                                             </td>
                                         </tr>
@@ -662,7 +663,7 @@ input::placeholder {
       </div>
       <div class="modal-body">
         <div class="mb-3">
-                <?php
+             <?php
 
                 include_once "../auth.php";
 
@@ -672,13 +673,18 @@ input::placeholder {
                 ?>
                 <label class="form-label">Name</label>
                 <input type="text" name="fname" class="form-control" value="<?php echo $sql['name'] ?>"  Readonly>
+                <label class="form-label">lastname</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['Lastname'] ?>"  Readonly>
                 <label class="form-label">Position</label>
-                <input type="text" name="position" class="form-control" value="<?php echo $sql['position'] ?>" Readonly><br>
+                <input type="text" name="position" class="form-control" value="<?php echo $sql['position'] ?>" Readonly>
+                <label class="form-label">Birthday</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['birthday'] ?>"  Readonly>
+                <label class="form-label">Address</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['p_address'] ?>"  Readonly><br>
               </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

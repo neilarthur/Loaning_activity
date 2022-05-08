@@ -368,26 +368,26 @@ input::placeholder {
                             </div><br/>
 
                             <div class="card-header">
-                            <strong class="card-title">Loan Type</strong>
+                            <strong class="card-title">Loan Information</strong>
                             </div><br/>
                             <div class="row">
                                         <div class="col-sm-4">
                                               <label for="loan_amount" class="control-label mb-1">Loan Amount</label>
-                                              <input id="loan_amount" name="company_affiliated" type="text" class="form-control" placeholder="Lastname here!">
+                                              <input id="loan_amount" name="loan_amount" type="text" class="form-control" placeholder="Lastname here!">
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="loan_balance" class="control-label mb-1">Loan Balance</label>
-                                              <input id="loan_balance" name="company_address" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="loan_balance" name="loan_balance" type="text" class="form-control" placeholder="Firstname here!">
                                         </div>
 
                                         <div class="col-sm-4">
                                               <label for="loan_Payment" class="control-label mb-1">Loan Payment</label>
-                                              <input id="loan_Payment" name="company_address" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="loan_Payment" name="loan_payment" type="text" class="form-control" placeholder="Firstname here!">
                                         </div>
 
                                         <div class="col-sm-4">
-                                              <label for="loan_Account" class="control-label mb-1">Loan Payment</label>
-                                              <input id="loan_account" name="company_address" type="text" class="form-control" placeholder="Firstname here!">
+                                              <label for="loan_account" class="control-label mb-1">Loan Account</label>
+                                              <input id="loan_account" name="loan_account" type="text" class="form-control" placeholder="Firstname here!">
                                         </div>
                             </div>
                             </div><br/>
@@ -489,7 +489,6 @@ input::placeholder {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

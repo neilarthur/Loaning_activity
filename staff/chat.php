@@ -210,7 +210,7 @@ input::placeholder {
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"  href="#" data-toggle="modal" data-target="#myprofile"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="#"  href="#" data-bs-toggle="modal" data-bs-target="#myprofile"><i class="fa fa-user"></i> My Profile</a>
 
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
 
@@ -477,7 +477,7 @@ input::placeholder {
       </div>
       <div class="modal-body">
         <div class="mb-3">
-                <?php
+                            <?php
 
                 include_once "../auth.php";
 
@@ -487,13 +487,18 @@ input::placeholder {
                 ?>
                 <label class="form-label">Name</label>
                 <input type="text" name="fname" class="form-control" value="<?php echo $sql['name'] ?>"  Readonly>
+                <label class="form-label">lastname</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['Lastname'] ?>"  Readonly>
                 <label class="form-label">Position</label>
-                <input type="text" name="position" class="form-control" value="<?php echo $sql['position'] ?>" Readonly><br>
+                <input type="text" name="position" class="form-control" value="<?php echo $sql['position'] ?>" Readonly>
+                <label class="form-label">Birthday</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['birthday'] ?>"  Readonly>
+                <label class="form-label">Address</label>
+                <input type="text" name="lname" class="form-control" value="<?php echo $sql['p_address'] ?>"  Readonly><br>
               </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
