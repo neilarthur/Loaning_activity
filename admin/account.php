@@ -204,6 +204,17 @@ require_once "../auth.php";
 
         <div class="content mt-3">
 
+               <!--DISPLAY -->
+            <?php
+
+            include_once("../auth.php");
+
+            $query = mysqli_query($con,"SELECT * FROM user");
+
+
+            $query_run = mysqli_query($con,"SELECT email_address FROM account");
+
+            while ($row=mysqli_fetch_assoc($query) AND $rows=mysqli_fetch_assoc($query_run) ) { ?>
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-1">
@@ -217,8 +228,8 @@ require_once "../auth.php";
                                                 <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
                                          </a>
                                         <div class="media-body">
-                                            <h4 class="text-light display-6">Jim Doe</h4>
-                                            <p>Project Manager</p>
+                                            <h4 class="text-light display-6"><?php echo $row['name'];  ?></h4>
+                                            <p><?php echo $row['position'];  ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -226,17 +237,57 @@ require_once "../auth.php";
 
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        <a href="#"> Email Address <span class="badge badge-primary pull-right"></span></a>
+                                        <a href="#"><?php echo $rows['email_address'];  ?><span class="badge badge-primary pull-right"></span></a>
                                     </li>
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-tasks"></i> Permanent Address <span class="badge badge-danger pull-right">15</span></a>
+                                        <a href="#"> <i class="fa fa-tasks"></i><?php echo $row['p_address'];  ?><span class="badge badge-danger pull-right">15</span></a>
                                     </li>
                                     <li class="list-group-item">
                                         <center>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+
+
+                                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th style="display: none;"><center>Name</center></th>
+                                            <th style="display: none;"><center>Address</center></th>
+                                            <th style="display: none;"><center>Contact</center></th>
+                                            <th style="display: none;"><center>Account</center></th>
+                                            <th style="display: none;"><center>Amount</center></th>
+                                            <th style="display: none;"><center>Payment</center></th>
+                                            <th style="display: none;"><center>Balance</center></th>
+                                            <th style="display: none;"><center>Action</center></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                     
+
+                                            <tr>
+                                                <td style="display: none;"><center><?php echo $row['user_id'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['name'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['lastname'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['position'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['p_address'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['educational'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['t_number'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['age'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['civil_status'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['gender'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $row['birthday'];  ?></center></td>
+                                                <td style="display: none;"><center><?php echo $rows['email_address'];  ?></center></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm viewbtn" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
+                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
+                                                    <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                       
+                                    </tbody>
+                                </table>
+                                           
                                         </center>
                                     </li>
                                 </ul>
@@ -247,138 +298,13 @@ require_once "../auth.php";
 
                 </div>
             </div>
+             <?php } ?>
+
             <!--/.col-->
 
-             <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-
-                        <aside class="profile-nav alt">
-                            <section class="card">
-                                <div class="card-header user-header alt bg-dark">
-                                    <div class="media">
-                                        <a href="#">
-                                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                                         </a>
-                                        <div class="media-body">
-                                            <h4 class="text-light display-6">Jim Doe</h4>
-                                            <p>Project Manager</p>
-                                        </div>
-                                    </div>
-                                </div>
 
 
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <a href="#">  Email Address <span class="badge badge-primary pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#">  Permanent Address <span class="badge badge-danger pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <center>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
-                                        </center>
-                                    </li>
-                                </ul>
 
-                            </section>
-                        </aside>
-                    </div>
-
-                </div>
-            </div>
-            <!--/.col-->
-
-             <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-
-                        <aside class="profile-nav alt">
-                            <section class="card">
-                                <div class="card-header user-header alt bg-dark">
-                                    <div class="media">
-                                        <a href="#">
-                                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                                         </a>
-                                        <div class="media-body">
-                                            <h4 class="text-light display-6">Jim Doe</h4>
-                                            <p>Project Manager</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <a href="#"> Email Address <span class="badge badge-primary pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#">  Permanent Address <span class="badge badge-danger pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <center>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
-                                        </center>
-                                    </li>
-                                </ul>
-
-                            </section>
-                        </aside>
-                    </div>
-
-                </div>
-            </div>
-            <!--/.col-->
-
-             <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-
-                        <aside class="profile-nav alt">
-                            <section class="card">
-                                <div class="card-header user-header alt bg-dark">
-                                    <div class="media">
-                                        <a href="#">
-                                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                                         </a>
-                                        <div class="media-body">
-                                            <h4 class="text-light display-6">Jim Doe</h4>
-                                            <p>Project Manager</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <a href="#">  Email Address <span class="badge badge-primary pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#"> Permanent Address <span class="badge badge-danger pull-right"></span></a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <center>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#view"><i class="fa fa-eye"></i> </button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#approved"><i class="fa fa-check"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reject"><i class="fa fa-times"></i></button>
-                                            <button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i></button>
-                                        </center>
-                                    </li>
-                                </ul>
-
-                            </section>
-                        </aside>
-                    </div>
-
-                </div>
-            </div>
             <!--/.col-->
 
         </div> <!-- .content -->
@@ -417,6 +343,7 @@ require_once "../auth.php";
         })(jQuery);
     </script> -->
 
+
     <!-- modal view -->
 <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
@@ -442,8 +369,13 @@ require_once "../auth.php";
                                                     <img class="align-self-center rounded-circle mr-3" style="width:125px; height:135px;" alt="" src="images/admin.jpg">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h2 class="text-light display-6">Jim Doe</h2>
-                                                    <p>Project Manager <br/>09304895235<br/>Birthday</p>
+                                                   
+                                                    <input id="name" type="text" class="text-light display-6 bg-dark" name="name" readonly="" style="border: none;">
+
+                                                    <input id="position" type="text" class="text-light display-6 bg-dark" name="position" readonly="" style="border: none;">
+                                                    <input id="t_number" type="text" class="text-light display-6 bg-dark" name="t_number" readonly="" style="border: none;">
+
+                                                    <input id="birthday" type="text" class="text-light display-6 bg-dark" name="birthday" readonly="" style="border: none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -452,18 +384,19 @@ require_once "../auth.php";
                                 </aside>
                             </div>
                                          <div class="col-sm-6">
-                                             <input id="p_address" name="p_address" type="text" class="form-control" value="Email Address"><br/>
+                                            <input type="hidden" name="update_id" id="update_id">
+                                             <input id="email_address" name="email_address" type="text" class="form-control" value="Email Address"><br/>
                                               <input id="p_address" name="p_address" type="text" class="form-control" value="Permanent Address"><br/>
-                                               <input id="p_address" name="p_address" type="text" class="form-control" value="High Educational Attainment">
+                                               <input id="educational" name="educational" type="text" class="form-control" value="High Educational Attainment">
                                             </div>                         
                                         </div>
 
                                         <div class="row">
                                                      <div class="col-sm-6">
                                                         <label></label>
-                                                          <input id="t_number" name="t_number" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
+                                                          <input id="tel_number" name="tel_number" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
                                                           <label></label>
-                                                          <input id="status" name="status" type="text" class="form-control" placeholder="Civil Status here!">
+                                                          <input id="civil_status" name="civil_status" type="text" class="form-control" placeholder="Civil Status here!">
                                                     </div>
                                                      <div class="col-sm-6">
                                                         <label></label>
@@ -615,7 +548,7 @@ require_once "../auth.php";
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="t_number" class="control-label mb-1">Telephone/Mobile Number</label>
-                                              <input id="t_number" name="t_number" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
+                                              <input id="tel_number" name="t_number" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
                                         </div>
                             </div>
 
@@ -684,7 +617,45 @@ require_once "../auth.php";
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="../js/bootstrap.js"></script>
 
+
+
+<script type="text/javascript">
+     $(document).ready(function() {
+      $('.viewbtn').on('click', function() {
+
+        $('#view').modal('show');
+
+
+        $tr = $(this).closest('tr');
+
+        var data = $tr.children("td").map(function() {
+          return $(this).text();
+
+
+        }).get();
+
+        console.log(data);
+        $('#update_id').val(data[0]);
+        $('#name').val(data[1]);
+        $('#position').val(data[3]);
+        $('#p_address').val(data[4]);
+        $('#educational').val(data[5]);
+        $('#t_number').val(data[6]);
+        $('#tel_number').val(data[6]);
+        $('#age').val(data[7]);
+        $('#civil_status').val(data[8]);
+        $('#gender').val(data[9]);
+        $('#birthday').val(data[10]);
+        $('#email_address').val(data[11]);
+
+
+
+      })
+    });
+</script>
 </body>
 
 </html>
