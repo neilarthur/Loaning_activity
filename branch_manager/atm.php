@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 
 if (!isset($_SESSION["islogin"]) || $_SESSION["islogin"] != true) {
@@ -289,7 +289,7 @@ input::placeholder {
                                         include_once("../auth.php");
 
                                         $query = mysqli_query($con,"SELECT * FROM customer WHERE category = 'atm'");
-                                        $sql = mysqli_query($con,"SELECT * FROM loan_info ");
+                                        $sql = mysqli_query($con,"SELECT * FROM loan_info,customer WHERE (loan_info.customer_id=customer.customer_id) AND (customer.category='atm')");
                                         while ($row=mysqli_fetch_assoc($query) AND $rows=mysqli_fetch_assoc($sql)) { ?>
 
                                             <tr>
