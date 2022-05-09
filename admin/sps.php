@@ -394,112 +394,139 @@ input::placeholder {
 
 <!-- modal view -->
 <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">Costumer Information</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card-header">
-                    <strong class="card-title">Personal Information</strong>
-                </div><br/>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <aside class="profile-nav alt">
-                            <section class="card">
-                                <div class="card-header user-header alt bg-dark">
-                                    <div class="media">
-                                        <a href="#">
-                                            <img class="align-self-center rounded-circle mr-3" style="width:125px; height:135px;" alt="" src="images/admin.jpg">
-                                        </a>
-                                        <div class="media-body">
-                                            <input id="fname" type="text" class="text-light display-6 bg-dark" name="fname" readonly="" style="border: none;">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="mediumModalLabel">Costumer Information</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                 <div class="card-header">
+                                    <strong class="card-title">Personal Information</strong>
+                                        </div><br/>
+                                        <div class="row">
+                                                    <div class="col-sm-6">
+                                                         
+                                <aside class="profile-nav alt">
+                                    <section class="card">
+                                        <div class="card-header user-header alt bg-dark">
+                                            <div class="media">
+                                                <a href="#">
+                                                    <img class="align-self-center rounded-circle mr-3" style="width:125px; height:135px;" alt="" src="images/admin.jpg">
+                                                </a>
+                                                <div class="media-body">
+                                                    <input id="fname" type="text" class="text-light display-6 bg-dark" name="fname" readonly="" style="border: none;">
 
-                                            <input id="c_position" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
-                                            <input id="m_no" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
+                                                    <input id="c_position" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
+                                                    <input id="m_no" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
 
-                                            <input id="date_birth" type="text" class="text-light display-6 bg-dark" name="date_birth" readonly="" style="border: none;">
+                                                    <input id="date_birth" type="text" class="text-light display-6 bg-dark" name="date_birth" readonly="" style="border: none;">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </aside>
+
+                                    </section>
+                                </aside>
+                            </div>
+                                         <div class="col-sm-6">
+                                            <input type="hidden" name="update_id" id="update_id">
+                                             <input id="category" name="category" type="text" class="form-control" value="ATM" readonly=""><br/>
+                                              <input id="p_address" name="permanent_address" type="text" class="form-control" value="Permanent Address" readonly=""><br/>
+                                               <input id="email" name="email" type="email" class="form-control" value="Mailing Address" readonly="">
+                                            </div>                         
+                                        </div>
+
+                                        <div class="row">
+                                                     <div class="col-sm-6">
+                                                        <label></label>
+                                                          <input id="mobile_no" name="mobile_no" type="text" class="form-control" placeholder="Telephone/Mobile Number here!" readonly="">
+                                                    </div>
+                                                     <div class="col-sm-6">
+                                                        <label></label>
+                                                          <input id="id_number" name="id_number" type="text" class="form-control" placeholder="ID Card Number here!" readonly="">
+                                                    </div>
+                                        </div>
+
+                                        <div class="row">
+                                                    <div class="col-sm-6">
+                                                          <label></label>
+                                                          <input id="mother_name" name="mother_name" type="text" class="form-control" placeholder="Mother's Name here!" readonly="">
+                                                          <label></label>
+                                                          <input id="father_name" name="father_name" type="text" class="form-control" placeholder="Father's Name here!" readonly="">
+                                                          <label></label>
+                                                          <input id="spouse_name" name="spouse_name" type="text" class="form-control" placeholder="Name of Spouse here!" readonly="">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                          <label></label>
+                                                          <input id="mother_no" name="mother_no" type="text" class="form-control" placeholder="Contact Person here!" readonly="">
+                                                          <label></label>
+                                                          <input id="father_no" name="father_no" type="text" class="form-control" placeholder="Contact Number here!" readonly="">
+                                                          <label></label>
+                                                          <input id="spouse_no" name="spouse_no" type="text" class="form-control" placeholder="Spouse Contact Number here!" readonly="">
+                                                    </div>  
+                                        </div><br/>
+
+                                        <div class="card-header">
+                                            <strong class="card-title">Company Information</strong>
+                                        </div><br/>
+                                        <div class="row">
+                                                    <div class="col-sm-4">
+                                                          <label></label>
+                                                          <input id="company_affiliated" name="company_affiliated" type="text" class="form-control" placeholder="Lastname here!" readonly="">
+                                                    </div>
+                                                     <div class="col-sm-4">
+                                                          <label></label>
+                                                          <input id="company_address" name="company_address" type="text" class="form-control" placeholder="Firstname here!" readonly="">
+                                                    </div>
+                                                     <div class="col-sm-4">
+                                                          <label></label>
+                                                          <input id="company_no" name="company_no" type="text" class="form-control" placeholder="Middlename here!" readonly="">
+                                                    </div>
+                                        </div>
+
+                                         <div class="row">
+                                                    <div class="col-sm-6">
+                                                          <label></label>
+                                                          <input id="company_position" name="company_position" type="text" class="form-control" placeholder="Permanent Address here!" readonly="">
+                                                    </div>
+                                                     <div class="col-sm-6">
+                                                          <label></label>
+                                                          <input id="company_status" name="company_status" type="text" class="form-control" placeholder="Email Address here!" readonly="">
+                                                    </div>
+                                        </div><br/>
+
+                                                                    <div class="card-header">
+                            <strong class="card-title">Loan Information</strong>
+                            </div><br/>
+                            <div class="row">
+                                        <div class="col-sm-4">
+                                              <label for="loan_amount" class="control-label mb-1">Loan Amount</label>
+                                              <input id="loan_amount" name="loan_amount" type="text" class="form-control" placeholder="Loan amount!" readonly="">
+                                        </div>
+                                         <div class="col-sm-4">
+                                              <label for="loan_balance" class="control-label mb-1">Loan Balance</label>
+                                              <input id="loan_balance" name="loan_balance" type="text" class="form-control" placeholder="Firstname here!" readonly="">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                              <label for="loan_payment" class="control-label mb-1">Loan Payment</label>
+                                              <input id="loan_payment" name="loan_payment" type="text" class="form-control" placeholder="Firstname here!" readonly="">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                              <label for="loan_account" class="control-label mb-1">Loan Account</label>
+                                              <input id="loan_account" name="loan_account" type="text" class="form-control" placeholder="Firstname here!" readonly="">
+                                        </div>
+                            </div>
+                            </div><br/>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        <input type="hidden" name="update_id" id="update_id">
-                        <input id="category" name="category" type="text" class="form-control" value="ATM"><br/>
-                        <input id="p_address" name="p_address" type="text" class="form-control" value="Permanent Address"><br/>
-                        <input id="email" name="email" type="email" class="form-control" value="Mailing Address">
-                    </div>
                 </div>
-
-                <div class="row">
-                             <div class="col-sm-6">
-                                <label></label>
-                                  <input id="mobile_no" name="mobile_no" type="text" class="form-control" placeholder="Telephone/Mobile Number here!">
-                            </div>
-                             <div class="col-sm-6">
-                                <label></label>
-                                  <input id="id_number" name="id_number" type="text" class="form-control" placeholder="ID Card Number here!">
-                            </div>
-                </div>
-
-                <div class="row">
-                            <div class="col-sm-6">
-                                  <label></label>
-                                  <input id="mother_name" name="mother_name" type="text" class="form-control" placeholder="Mother's Name here!">
-                                  <label></label>
-                                  <input id="father_name" name="father_name" type="text" class="form-control" placeholder="Father's Name here!">
-                                  <label></label>
-                                  <input id="spouse_name" name="spouse_name" type="text" class="form-control" placeholder="Name of Spouse here!">
-                            </div>
-                            <div class="col-sm-6">
-                                  <label></label>
-                                  <input id="mother_no" name="mother_no" type="text" class="form-control" placeholder="Contact Person here!">
-                                  <label></label>
-                                  <input id="father_no" name="father_no" type="text" class="form-control" placeholder="Contact Number here!">
-                                  <label></label>
-                                  <input id="spouse_no" name="spouse_no" type="text" class="form-control" placeholder="Spouse Contact Number here!">
-                            </div>  
-                </div><br/>
-
-                <div class="card-header">
-                    <strong class="card-title">Company Information</strong>
-                </div><br/>
-                <div class="row">
-                            <div class="col-sm-4">
-                                  <label></label>
-                                  <input id="company_affiliated" name="company_affiliated" type="text" class="form-control" placeholder="Lastname here!">
-                            </div>
-                             <div class="col-sm-4">
-                                  <label></label>
-                                  <input id="company_address" name="company_address" type="text" class="form-control" placeholder="Firstname here!">
-                            </div>
-                             <div class="col-sm-4">
-                                  <label></label>
-                                  <input id="company_no" name="company_no" type="text" class="form-control" placeholder="Middlename here!">
-                            </div>
-                </div>
-
-                 <div class="row">
-                            <div class="col-sm-6">
-                                  <label></label>
-                                  <input id="company_position" name="c_position" type="text" class="form-control" placeholder="Permanent Address here!">
-                            </div>
-                             <div class="col-sm-6">
-                                  <label></label>
-                                  <input id="company_status" name="company_status" type="text" class="form-control" placeholder="Email Address here!">
-                            </div>
-                </div><br/>
-    </div>
-    <div class="modal-footer">
-    </div>
-</div>
-</div>
-</div>
 <!-- end modal view -->
 
 <!-- modal update -->
@@ -508,7 +535,7 @@ input::placeholder {
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="mediumModalLabel">Costumer Information</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -530,12 +557,14 @@ input::placeholder {
                                                     <img class="align-self-center rounded-circle mr-3" style="width:125px; height:135px;" alt="" src="images/admin.jpg">
                                                 </a>
                                                 <div class="media-body">
-                                                     <input id="fname1" type="text" class="text-light display-6 bg-dark" name="fname" readonly="" style="border: none;">
+
+                                                    <input id="fname1" type="text" class="text-light display-6 bg-dark" name="fname" readonly="" style="border: none;">
 
                                                     <input id="c_position1" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
                                                     <input id="m_no1" type="text" class="text-light display-6 bg-dark" name="company_position" readonly="" style="border: none;">
 
                                                     <input id="date_birth1" type="text" class="text-light display-6 bg-dark" name="date_birth" readonly="" style="border: none;">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -609,10 +638,34 @@ input::placeholder {
                                                           <input id="company_status1" name="company_status" type="text" class="form-control" placeholder="Email Address here!">
                                                     </div>
                                         </div><br/>
+
+                                         <div class="card-header">
+                            <strong class="card-title">Loan Information</strong>
+                            </div><br/>
+                            <div class="row">
+                                        <div class="col-sm-4">
+                                              <label for="loan_amount" class="control-label mb-1">Loan Amount</label>
+                                              <input id="loan_amount1" name="loan_amount" type="text" class="form-control" placeholder="Lastname here!">
+                                        </div>
+                                         <div class="col-sm-4">
+                                              <label for="loan_balance" class="control-label mb-1">Loan Balance</label>
+                                              <input id="loan_balance1" name="loan_balance" type="text" class="form-control" placeholder="Firstname here!">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                              <label for="loan_payment" class="control-label mb-1">Loan Payment</label>
+                                              <input id="loan_payment1" name="loan_payment" type="text" class="form-control" placeholder="Firstname here!">
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                              <label for="loan_account" class="control-label mb-1">Loan Account</label>
+                                              <input id="loan_account1" name="loan_account" type="text" class="form-control" placeholder="Firstname here!">
+                                        </div>
+                            </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" name="edit" class="btn btn-secondary">Save</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                         </form>
                         </div>
@@ -625,8 +678,8 @@ input::placeholder {
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="mediumModalLabel">Approved Account</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <h5 class="modal-title" id="mediumModalLabel">Delete Account</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -639,7 +692,7 @@ input::placeholder {
 
                                         <div class="modal-footer">
                                             <button type="submit" name="deletedata" class="btn btn-secondary">YES</button>
-                                             <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
                                         </div>
                             </form>
                             </div>
@@ -649,7 +702,7 @@ input::placeholder {
                 </div>
 <!-- end modal delete -->
 
-<!-- Modal -->
+ <!-- Modal -->
 <div class="modal fade" id="myprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -658,7 +711,7 @@ input::placeholder {
       </div>
       <div class="modal-body">
         <div class="mb-3">
-             <?php
+                <?php
 
                 include_once "../auth.php";
 
@@ -684,6 +737,9 @@ input::placeholder {
     </div>
   </div>
 </div>
+
+
+
 
 
 
@@ -730,6 +786,11 @@ input::placeholder {
         $('#company_status').val(data[17]);
         $('#fname').val(data[3]);
         $('#date_birth').val(data[18]);
+
+        $('#loan_amount').val(data[20]);
+        $('#loan_account').val(data[19]);
+        $('#loan_payment').val(data[21]);
+        $('#loan_balance').val(data[22]);
       })
     });
 </script>
@@ -768,6 +829,11 @@ input::placeholder {
             $('#company_status1').val(data[17]);
             $('#fname1').val(data[3]);
             $('#date_birth1').val(data[18]);
+
+            $('#loan_amount1').val(data[20]);
+            $('#loan_account1').val(data[19]);
+            $('#loan_payment1').val(data[21]);
+            $('#loan_balance1').val(data[22]);
         })
     });
 </script>

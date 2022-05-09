@@ -16,6 +16,6 @@ if (isset($_POST['deletedata'])) {
     }
     else{
         echo "Error deleting record";
-    }   
+    } 
 }
 ?>

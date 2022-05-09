@@ -21,6 +21,11 @@ if (isset($_POST['edit'])) {
     $company_position  = $_POST['company_position'];
     $company_status    = $_POST['company_status'];
 
+    $loan_account = $_POST['loan_account'];
+    $loan_amount = $_POST['loan_amount'];
+    $loan_payment = $_POST['loan_payment'];
+    $loan_balance = $_POST['loan_balance']; 
+
 
     $query_run = "UPDATE customer SET category='$category', permanent_address='$permanent_address',email='$email', mobile_no='$mobile_no', id_number='$id_number', mother_name='$mother_name', father_name ='$father_name', spouse_name='$spouse_name',mother_no = '$mother_no', father_no = '$father_no', spouse_no = '$spouse_no', company_affiliated = '$company_affiliated', company_address = '$company_address', company_no = '$company_no', company_position = '$company_position',company_status = '$company_status' WHERE customer_id='$update_id'";
 
@@ -28,13 +33,19 @@ if (isset($_POST['edit'])) {
 
 
     if ($query_run) {
+
+        $sql = "UPDATE loan_info SET loan_account='$loan_account',loan_amount='$loan_amount',loan_payment='$loan_payment',loan_balance='$loan_balance' WHERE customer_id='$update_id'";
+        $sql_run = mysqli_query($con,$sql);
+        
     	echo '<script> alert("Data Updated");</script>';
-    	header("Location:atm.php");
+    	header("Location:sps.php");
     }
 
     else {
     	echo '<script?> alert ("Data Not Updated"); </script';
-    	header("Location:atm.php");
+    	header("Location:sps.php");
     }
+
+
 }
 ?>

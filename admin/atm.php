@@ -290,7 +290,7 @@ input::placeholder {
                                         include_once("../auth.php");
 
                                         $query = mysqli_query($con,"SELECT * FROM customer WHERE category = 'atm'");
-                                        $sql = mysqli_query($con,"SELECT * FROM loan_info ");
+                                        $sql = mysqli_query($con,"SELECT * FROM loan_info");
                                         while ($row=mysqli_fetch_assoc($query) AND $rows=mysqli_fetch_assoc($sql)) { ?>
 
                                             <tr>
@@ -313,6 +313,7 @@ input::placeholder {
                                                 <td style=" display: none;"><?php echo $row['company_position'];  ?></td>
                                                 <td style=" display: none;"><?php echo $row['company_status'];  ?></td>
                                                 <td style=" display: none;"><?php echo $row['date_birth'];  ?></td>
+                                                
                                                 <td><center><?php echo $rows['loan_account'];  ?></center></td>
                                                 <td><center><?php echo $rows['loan_amount'];  ?></center></td>
                                                 <td><center><?php echo $rows['loan_payment'];  ?></center></td>
