@@ -377,12 +377,12 @@ input::placeholder {
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="loan_balance" class="control-label mb-1">Loan Balance</label>
-                                              <input id="loan_balance" name="loan_balance" type="text" class="form-control" placeholder="Enter Loan Balance!">
+                                              <input id="loan_balance" name="loan_balance" type="number" class="form-control" placeholder="Enter Loan Balance!">
                                         </div>
 
                                         <div class="col-sm-4">
                                               <label for="loan_Payment" class="control-label mb-1">Loan Payment</label>
-                                              <input id="loan_Payment" name="loan_payment" type="text" class="form-control" placeholder="Enter Payment!">
+                                              <input id="loan_Payment" name="loan_payment" type="number" class="form-control" placeholder="Enter Payment!">
                                         </div>
 
                                         <div class="col-sm-4">
