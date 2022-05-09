@@ -344,15 +344,15 @@ input::placeholder {
                             <div class="row">
                                         <div class="col-sm-4">
                                               <label for="c_affiliated" class="control-label mb-1">Company Affiliated With</label>
-                                              <input id="c_affiliated" name="company_affiliated" type="text" class="form-control" placeholder="Lastname here!">
+                                              <input id="c_affiliated" name="company_affiliated" type="text" class="form-control" placeholder="Enter your Company!">
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="c_address" class="control-label mb-1">Company Address</label>
-                                              <input id="c_address" name="company_address" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="c_address" name="company_address" type="text" class="form-control" placeholder="Enter Company Address!">
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="c_number" class="control-label mb-1">Company Contact Number</label>
-                                              <input id="c_number" name="company_no" type="text" class="form-control" placeholder="Middlename here!">
+                                              <input id="c_number" name="company_no" type="text" class="form-control" placeholder="Enter Contact number!">
                                         </div>
                             </div>
 
@@ -373,21 +373,21 @@ input::placeholder {
                             <div class="row">
                                         <div class="col-sm-4">
                                               <label for="loan_amount" class="control-label mb-1">Loan Amount</label>
-                                              <input id="loan_amount" name="loan_amount" type="text" class="form-control" placeholder="Lastname here!">
+                                              <input id="loan_amount" name="loan_amount" type="number" class="form-control" placeholder="Enter Loan Amount!">
                                         </div>
                                          <div class="col-sm-4">
                                               <label for="loan_balance" class="control-label mb-1">Loan Balance</label>
-                                              <input id="loan_balance" name="loan_balance" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="loan_balance" name="loan_balance" type="text" class="form-control" placeholder="Enter Loan Balance!">
                                         </div>
 
                                         <div class="col-sm-4">
                                               <label for="loan_Payment" class="control-label mb-1">Loan Payment</label>
-                                              <input id="loan_Payment" name="loan_payment" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="loan_Payment" name="loan_payment" type="text" class="form-control" placeholder="Enter Payment!">
                                         </div>
 
                                         <div class="col-sm-4">
                                               <label for="loan_account" class="control-label mb-1">Loan Account</label>
-                                              <input id="loan_account" name="loan_account" type="text" class="form-control" placeholder="Firstname here!">
+                                              <input id="loan_account" name="loan_account" type="text" class="form-control" placeholder="Enter Account!">
                                         </div>
                             </div>
                             </div><br/>

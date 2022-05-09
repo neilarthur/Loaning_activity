@@ -620,11 +620,13 @@ input::placeholder {
                                                           <input id="company_status1" name="company_status" type="text" class="form-control" placeholder="Email Address here!">
                                                     </div>
                                         </div><br/>
+                                        
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" name="edit" class="btn btn-secondary">Save</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
+                            
                         </form>
                         </div>
                     </div>
