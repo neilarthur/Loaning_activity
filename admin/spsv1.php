@@ -288,7 +288,8 @@ input::placeholder {
                                         include_once("../auth.php");
 
                                         $query = mysqli_query($con, "SELECT * FROM customer WHERE category = 'spsv1' ");
-                                        $sql = mysqli_query($con,"SELECT * FROM loan_info ");
+
+                                        $sql = mysqli_query($con,"SELECT * FROM loan_info,customer WHERE (loan_info.customer_id=customer.customer_id) AND (customer.category='spsv1')");
                                         while ($row=mysqli_fetch_assoc($query) AND $rows=mysqli_fetch_assoc($sql)) { ?>
                                         <tr>
                                             <td style="display: none;"><center><?php echo $row['customer_id'];  ?></center></td>
